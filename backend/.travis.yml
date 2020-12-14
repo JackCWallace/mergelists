@@ -6,7 +6,7 @@ matrix:
   include:
   - node_js: '12'
 cache:
-  directories: [node_modules]
+  directories: [backend/node_modules]
 install:
   - cd backend
   - yarn
@@ -18,7 +18,6 @@ before_script:
   - chmod +x ./cc-test-reporter
   - ./cc-test-reporter before-build
 script:
-  - cd backend
   - yarn test
 after_script:
   - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESUL
