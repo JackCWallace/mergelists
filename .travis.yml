@@ -1,5 +1,2 @@
-script:
-  - cd backend
 import:
   - backend/.travis.yml
-  - backend/package.json
