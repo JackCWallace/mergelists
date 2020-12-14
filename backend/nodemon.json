@@ -1,10 +1,11 @@
 {
   "watch": [
-    "package.json",
-    "nodemon.json",
-    ".eslintrc.json",
     ".babelrc",
+    ".env",
+    ".eslintrc.json",
     ".prettierrc",
+    "nodemon.json",
+    "package.json",
     "src/"
   ],
   "verbose": true,
