@@ -8,6 +8,7 @@
     "postpretty": "yarn lint --fix",
     "prestart": "babel ./src --out-dir build",
     "pretty": "prettier --write '**/*.{js,json}' '!node_modules/**'",
+    "runQuery": "babel-node ./src/utils/runQuery",
     "start": "node ./build/bin/www",
     "startdev": "nodemon --exec babel-node ./src/bin/www",
     "test": "nyc --reporter=html --reporter=text --reporter=lcov mocha -r @babel/register"
@@ -19,6 +20,7 @@
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "morgan": "~1.0.0",
+    "pg": "^8.5.1",
     "static-favicon": "~1.0.0"
   },
   "devDependencies": {
