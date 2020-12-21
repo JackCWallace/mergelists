@@ -7,10 +7,10 @@ CREATE TABLE IF NOT EXISTS messages (\
   )\
   ";
 
-export const insertMessages = `
-INSERT INTO messages(name, message)
-VALUES ('chidimo', 'first message'),
-      ('orji', 'second message')
-`;
+export const insertMessages = "\
+INSERT INTO messages(name, message)\
+VALUES ('chidimo', 'first message'),\
+      ('orji', 'second message')\
+";
 
-export const dropMessagesTable = `DROP TABLE messages`;
+export const dropMessagesTable = "DROP TABLE messages";
