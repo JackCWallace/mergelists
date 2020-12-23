@@ -9,10 +9,10 @@
     "prestart": "babel ./src --out-dir build",
     "pretty": "prettier --write '**/*.{js,json}' '!node_modules/**'",
     "runQuery": "babel-node ./src/utils/runQuery",
-    "start": "node ./build/bin/www",
-    "startdev": "nodemon --exec babel-node ./src/bin/www",
+    "start": "node ./build/www",
+    "startdev": "nodemon --exec babel-node ./src/www",
     "test": "nyc --reporter=html --reporter=text --reporter=lcov mocha -r @babel/register",
-    "build": "babel ./build/bin/www.js --out-file ./build/bin/server.compiled.js"
+    "build": "babel ./build/www.js --out-file ./build/server.compiled.js"
   },
   "dependencies": {
     "axios": "^0.21.1",
