@@ -4,7 +4,7 @@
  */
 import debug from 'debug';
 import http from 'http';
-import app from './src/app';
+import app from './app';
 /**
  * Normalize a port into a number, string, or false.
  */

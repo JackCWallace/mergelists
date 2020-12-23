@@ -6,13 +6,13 @@
     "coverage": "nyc report --reporter=text-lcov | coveralls",
     "lint": "./node_modules/.bin/eslint ./src",
     "postpretty": "yarn lint --fix",
-    "prestart": "babel --out-dir build",
+    "prestart": "babel ./src --out-dir build/",
     "pretty": "prettier --write '**/*.{js,json}' '!node_modules/**'",
     "runQuery": "babel-node ./src/utils/runQuery",
-    "start": "node ./server",
-    "startdev": "nodemon --exec babel-node ./server",
+    "start": "node ./build/server",
+    "startdev": "nodemon --exec babel-node ./src/server",
     "test": "nyc --reporter=html --reporter=text --reporter=lcov mocha -r @babel/register",
-    "build": "babel ./server.js --out-file ./server.compiled.js"
+    "build": "babel ./src/server.js --out-file ./src/server.compiled.js"
   },
   "dependencies": {
     "axios": "^0.21.1",
