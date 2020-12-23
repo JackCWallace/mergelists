@@ -1,1 +1,1 @@
-web: node server.compiled.js
+web: node ./build/bin/server.compiled.js

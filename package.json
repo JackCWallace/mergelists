@@ -12,7 +12,7 @@
     "start": "node ./build/bin/www",
     "startdev": "nodemon --exec babel-node ./src/bin/www",
     "test": "nyc --reporter=html --reporter=text --reporter=lcov mocha -r @babel/register",
-    "build": "babel ./build/bin/www.js --out-file server.compiled.js"
+    "build": "babel ./build/bin/www.js --out-file ./build/bin/server.compiled.js"
   },
   "dependencies": {
     "axios": "^0.21.1",
