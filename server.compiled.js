@@ -11,7 +11,7 @@ var _debug = _interopRequireDefault(require("debug"));
 
 var _http = _interopRequireDefault(require("http"));
 
-var _app = _interopRequireDefault(require("../app"));
+var _app = _interopRequireDefault(require("./src/app"));
 
 /**
  * Normalize a port into a number, string, or false.

@@ -6,6 +6,7 @@
     ".prettierrc",
     "nodemon.json",
     "package.json",
+    "server.js",
     "src/"
   ],
   "verbose": true,
