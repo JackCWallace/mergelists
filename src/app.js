@@ -3,11 +3,10 @@ import express from 'express';
 import path from 'path';
 import cookieParser from 'cookie-parser';
 import indexRouter from './routes/index';
-import gitRootPath from 'git-root-path';
 
 const app = express();
 app.use(logger('dev'));
-app.use(express.static(path.join(gitRootPath(__dirname), 'client', 'build')));
+app.use(express.static(path.join('../', '../', 'client', 'build')));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
