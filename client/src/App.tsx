@@ -29,19 +29,11 @@ class App extends React.Component<Props, State> {
   }
 
   getMessages = async () => {
-    const response = await fetch('/v1/messages');
+    const response = await fetch('/messages');
     const body = await response.json();
     console.log(body)
 
     return body;
-   
-    // fetch('/v1/messages')
-    //   .then(response => response.json())
-    //   .then(response => {
-    //     this.setState({
-    //       messages: response
-    //     });
-    //   });
   }
 
   render() {
