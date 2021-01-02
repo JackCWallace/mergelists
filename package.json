@@ -4,9 +4,11 @@
   "private": true,
   "scripts": {
     "lint": "./node_modules/.bin/eslint ./src",
+    "build": "babel .src/ -d build",
     "pretty": "prettier --write '**/*.{js,json}' '!node_modules/**'",
     "postpretty": "yarn lint --fix",
-    "start": "node ./src/bin/www.js",
+    "prestart": "babel ./src --out-dir build",
+    "start": "node ./build/bin/www.js",
     "startdev": "nodemon --exec babel-node ./src/bin/www"
   },
   "dependencies": {
