@@ -6,7 +6,9 @@ import indexRouter from './routes/index';
 
 const app = express();
 app.use(logger('dev'));
-app.use(express.static(path.join(__dirname, '..', 'client', 'build')));
+var static_pages = path.join(__dirname, '..', 'client', 'build');
+console.log(static_pages);
+app.use(express.static(static_pages));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
