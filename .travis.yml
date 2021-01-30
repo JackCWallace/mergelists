@@ -38,3 +38,4 @@ addons:
 before_install:
   - sudo cp /etc/postgresql/{9.6,10}/main/pg_hba.conf
   - sudo /etc/init.d/postgresql restart
+  
