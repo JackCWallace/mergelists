@@ -5,7 +5,6 @@
   "scripts": {
     "coverage": "nyc report --reporter=text-lcov | coveralls",
     "lint": "./node_modules/.bin/eslint ./src",
-    "build": "babel .src/ --out-dir build",
     "pretty": "prettier --write '**/*.{js,json}' '!node_modules/**'",
     "runQuery": "babel-node ./src/utils/runQuery",
     "postpretty": "yarn lint --fix",
@@ -15,13 +14,6 @@
     "test": "nyc --reporter=html --reporter=text --reporter=lcov mocha -r @babel/register"
   },
   "dependencies": {
-    "@babel/cli": "^7.12.10",
-    "@babel/core": "^7.12.10",
-    "@babel/node": "^7.12.10",
-    "@babel/plugin-transform-runtime": "^7.12.10",
-    "@babel/preset-env": "^7.12.11",
-    "@babel/register": "^7.12.10",
-    "@babel/runtime": "^7.12.5",
     "axios": "^0.21.1",
     "body-parser": "^1.19.0",
     "cookie-parser": "^1.4.5",
@@ -35,6 +27,13 @@
     "static-favicon": "^2.0.0-alpha"
   },
   "devDependencies": {
+    "@babel/cli": "^7.12.10",
+    "@babel/core": "^7.12.10",
+    "@babel/node": "^7.12.10",
+    "@babel/plugin-transform-runtime": "^7.12.10",
+    "@babel/preset-env": "^7.12.11",
+    "@babel/register": "^7.12.10",
+    "@babel/runtime": "^7.12.5",
     "chai": "^4.2.0",
     "coveralls": "^3.1.0",
     "eslint": "^7.16.0",
