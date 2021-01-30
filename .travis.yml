@@ -7,8 +7,6 @@ deploy:
   app:
     master: mergelists
     matrix: 
-  include:
-  - node_js: '12'
   api_key:
     secure: zLgqeTjfH0t87su+hUrTifWMbjeZ3UYjSxjeX5kpH8/9I+AQt0Gqu4KYwEuRMwr8zvHuGU2Huo2v3VzISMcrTW9kLLKU5OgXuncePLi/B1thWBKCLlthGIQ+R1rXYCOm1tISrx2VVgHcBOMb5uM48WKT/fOhxD3oaLxP9i0FK1pz995WEpq0yggDvmXaG+jfjHOmn971VUo2tNLOrpkC3gA59ZUrBdLo557seig/ArTgqKebRj6h2MplZ6DSLF7qhvdsnz8lNTYZ8xlqkVyyMV5+F+/RjGAkxSb9wyulNYU7GS3w99BJnhRv+0N+zdhoPJSYRj4XUYZTN3+x/1nlAm6SJbVcjT6FKmR6TZY/TIBBXTYpBsHSKLacBCwv6TZi2LoVuZEIzWsGnmLJByilghWwuXnYC7k0s+/Sen2OBYRFGa9wwKXjxohXrMGWUjB9Agto3wvRGGSUZwmuDLq09hc/FIS/te41/4+8FVDKURy0sibN3HyCQLzVMUyk/a64YgxH2Tqt85YFv6jzN3pz0rZ8omYmwAwusIITdT97M9conlM/NkTNTr8GvqdFzfnpCqcY372v3ZEMQOLfeG7OUBsdSvkxQRi/5knyo8BV00Jt15O25PBF1uB3idHw9RuBd2PgSc3FlIwueGjZAQbjugnDSacocy+AqIj+FljvPKg=
 cache:
