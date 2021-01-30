@@ -1,39 +1,37 @@
 language: node_js
 env:
   global:
-  - CC_TEST_REPORTER_ID=66aa665775b1dcd90d5faafcb965c0b56812cc4d6cda2546c64759d213c1f997
+    - CC_TEST_REPORTER_ID=66aa665775b1dcd90d5faafcb965c0b56812cc4d6cda2546c64759d213c1f997
 deploy:
   provider: heroku
   app:
     master: mergelists
-    matrix: 
-  api_key:
-    secure: zLgqeTjfH0t87su+hUrTifWMbjeZ3UYjSxjeX5kpH8/9I+AQt0Gqu4KYwEuRMwr8zvHuGU2Huo2v3VzISMcrTW9kLLKU5OgXuncePLi/B1thWBKCLlthGIQ+R1rXYCOm1tISrx2VVgHcBOMb5uM48WKT/fOhxD3oaLxP9i0FK1pz995WEpq0yggDvmXaG+jfjHOmn971VUo2tNLOrpkC3gA59ZUrBdLo557seig/ArTgqKebRj6h2MplZ6DSLF7qhvdsnz8lNTYZ8xlqkVyyMV5+F+/RjGAkxSb9wyulNYU7GS3w99BJnhRv+0N+zdhoPJSYRj4XUYZTN3+x/1nlAm6SJbVcjT6FKmR6TZY/TIBBXTYpBsHSKLacBCwv6TZi2LoVuZEIzWsGnmLJByilghWwuXnYC7k0s+/Sen2OBYRFGa9wwKXjxohXrMGWUjB9Agto3wvRGGSUZwmuDLq09hc/FIS/te41/4+8FVDKURy0sibN3HyCQLzVMUyk/a64YgxH2Tqt85YFv6jzN3pz0rZ8omYmwAwusIITdT97M9conlM/NkTNTr8GvqdFzfnpCqcY372v3ZEMQOLfeG7OUBsdSvkxQRi/5knyo8BV00Jt15O25PBF1uB3idHw9RuBd2PgSc3FlIwueGjZAQbjugnDSacocy+AqIj+FljvPKg=
+    matrix:
+  include:
+  - node_js: '12'
 cache:
-  directories:
-  - node_modules
+  directories: [node_modules]
 install:
-- yarn
-after_success:
-- yarn coverage
+  - yarn
+after_success: 
+  - yarn coverage
 before_script:
-- psql -c 'create database testdb;' -U postgres
-- curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64
-  > ./cc-test-reporter
-- chmod +x ./cc-test-reporter
-- "./cc-test-reporter before-build"
+  - psql -c 'create database testdb;' -U postgres
+  - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+  - chmod +x ./cc-test-reporter
+  - ./cc-test-reporter before-build
 script:
-- yarn test
+  - yarn test
 after_script:
-- "./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT"
+  - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
 services:
-- postgresql
+  - postgresql
 addons:
-  postgresql: '10'
+  postgresql: "10"
   apt:
     packages:
     - postgresql-10
     - postgresql-client-10
 before_install:
-- sudo cp /etc/postgresql/{9.6,10}/main/pg_hba.conf
-- sudo /etc/init.d/postgresql restart
+  - sudo cp /etc/postgresql/{9.6,10}/main/pg_hba.conf
+  - sudo /etc/init.d/postgresql restart
