@@ -9,7 +9,7 @@
     "runQuery": "babel-node ./src/utils/runQuery",
     "postpretty": "yarn lint --fix",
     "prestart": "babel ./src --out-dir build",
-    "start": "node ./build/bin/www.js",
+    "start": "node ./build/bin/www",
     "startdev": "nodemon --exec babel-node ./src/bin/www",
     "test": "nyc --reporter=html --reporter=text --reporter=lcov mocha -r @babel/register"
   },
